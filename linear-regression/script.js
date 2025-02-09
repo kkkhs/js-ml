@@ -32,4 +32,7 @@ window.onload = async () => {
     epochs: 100, //训练迭代次数
     callbacks: tfvis.show.fitCallbacks({ name: "训练过程" }, ["loss"]),
   });
+
+  const output = model.predict(tf.tensor([5]));
+  alert(`如果 x 为 5，那么预测 y 为 ${output.dataSync()[0]}`);
 };
